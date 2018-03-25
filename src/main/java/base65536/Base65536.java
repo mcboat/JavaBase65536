@@ -49,8 +49,7 @@ public class Base65536 {
 	 * @return  A Base65536 encoder.
 	 *
 	 * @throws  IllegalArgumentException if {@code lineSeparator} includes any
-	 *          character of "The Base65536 Alphabet" as specified in Table 1 of
-	 *          RFC 2045.
+	 *          unsafe character that Unicode cannot use for the base65536 algorithm.
 	 */
 	public static Encoder getMimeEncoder(int lineLength, byte[] lineSeparator) {
 		Objects.requireNonNull(lineSeparator);
