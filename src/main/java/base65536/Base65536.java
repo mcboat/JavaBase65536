@@ -10,7 +10,7 @@ public class Base65536 {
 	* @return  A Base65536 encoder.
 	*/
 	public static Encoder getEncoder() {
-		return Encoder.RFC4648;
+		return Encoder.BASE65536;
 	}
 
 	/**
@@ -21,7 +21,7 @@ public class Base65536 {
 	 * @return  A Base65536 encoder.
 	 */
 	public static Encoder getUrlEncoder() {
-		return Encoder.RFC4648_URLSAFE;
+		return Encoder.BASE65536_URLSAFE;
 	}
 
 	/**
@@ -31,7 +31,7 @@ public class Base65536 {
 	 * @return  A Base65536 encoder.
 	 */
 	public static Encoder getMimeEncoder() {
-		return Encoder.RFC2045;
+		return Encoder.BASE65536_MIME;
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class Base65536 {
 						"Illegal base65536 line separator character 0x" + Integer.toString(b, 16));
 		}
 		if (lineLength <= 0) {
-			return Encoder.RFC4648;
+			return Encoder.BASE65536;
 		}
 		return new Encoder(false, lineSeparator, lineLength >> 2 << 2, true);
 	}
@@ -73,7 +73,7 @@ public class Base65536 {
 	 * @return  A Base65536 decoder.
 	 */
 	public static Decoder getDecoder() {
-		return Decoder.RFC4648;
+		return Decoder.BASE65536;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class Base65536 {
 	 * @return  A Base65536 decoder.
 	 */
 	public static Decoder getUrlDecoder() {
-		return Decoder.RFC4648_URLSAFE;
+		return Decoder.BASE65536_URLSAFE;
 	}
 
 	/**
@@ -94,14 +94,14 @@ public class Base65536 {
 	 * @return  A Base65536 decoder.
 	 */
 	public static Decoder getMimeDecoder() {
-		return Decoder.RFC2045;
+		return Decoder.BASE65536_MIME;
 	}
 
 	public static class Encoder {
 		// TODO: put some actual stuff in the encoder
-		public static Encoder RFC4648 = new Encoder();
-		public static Encoder RFC4648_URLSAFE = new Encoder();
-		public static Encoder RFC2045 = new Encoder();
+		public static Encoder BASE65536 = new Encoder();
+		public static Encoder BASE65536_URLSAFE = new Encoder();
+		public static Encoder BASE65536_MIME = new Encoder();
 
 		Encoder() {}
 		
@@ -111,9 +111,9 @@ public class Base65536 {
 	public static class Decoder {
 		public static int[] fromBase65536;
 		// TODO: put some actual stuff in the decoder
-		public static Decoder RFC4648 = new Decoder();
-		public static Decoder RFC4648_URLSAFE = new Decoder();
-		public static Decoder RFC2045 = new Decoder();
+		public static Decoder BASE65536 = new Decoder();
+		public static Decoder BASE65536_URLSAFE = new Decoder();
+		public static Decoder BASE65536_MIME = new Decoder();
 
 		Decoder() {}
 	}
